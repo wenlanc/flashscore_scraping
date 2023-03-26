@@ -1,0 +1,6 @@
+{
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.17",
+        "symfony/dotenv": "^5.2"
+    }
+}

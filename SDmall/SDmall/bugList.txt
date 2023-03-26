@@ -1,0 +1,22 @@
+sudo chown -R www-data:www-data /var/www/html/SDmall/application/products
+
+||
+
+sudo chmod  o+w /var/www/html
+
+||
+
+chmod -R g+rw /var/www/html/
+
+
+sudo a2enmod rewrite
+
+sudo service apache2 restart
+
+##### necessary packages on linux server
+
+curl
+
+sudo apt-get install php-xmlwriter
+
+apt-get install php-gd
