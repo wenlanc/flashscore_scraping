@@ -1,0 +1,7 @@
+Scrapy==2.4.0
+selenium==3.141.0
+fire
+pandas
+openpyxl
+xlrd
+PyMySQL

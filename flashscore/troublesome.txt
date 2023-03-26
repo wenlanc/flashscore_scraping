@@ -1,0 +1,228 @@
+### football:
+ip: 185.163.126.227
+user: administrateur
+pass: fOYjWxw2atAInVUdPFk
+anydesk: 364 199 536 827 478 638
+pass: glory123
+
+### basketball:
+ip: 185.163.125.173
+user: administrateur
+pass: H2Q6Gzay8Wow7jUOAqB
+anydesk: 463 233 704
+pass: glory123
+
+### tennis:
+ip: 185.163.124.208
+user: administrateur
+pass: B8no4YL2gmECPMpAb5k
+anydesk: 548626553
+pass: glory123
+
+### status:
+	# football:	football.statistics
+	# tennis: tennis.statistics
+	# basketball: 
+	basketball.seasons, baseball.seasons, cricket.seasons, american-football.seasons, football.seasons, tennis.seasons
+	basketball.matches, baseball.matches, cricket.matches, american-football.matches, football.matches, tennis.matches
+
+### github
+user: information@ebuildix.com
+pass: glory59?!
+
+database
+https://sendgb.com/lxogj027aLh
+
+
+# get column names of table
+SELECT COLUMN_NAME
+  FROM INFORMATION_SCHEMA.COLUMNS
+  WHERE TABLE_SCHEMA = 'flashscore' AND TABLE_NAME = 'tennis_statistics';
+
+# sport statistics
+SELECT id, `name` FROM sport;
+
+# country statistics
+SELECT id, `name` FROM country;
+
+# league statistics
+SELECT sport.id, sport.name, sta.cnt FROM (SELECT sport_id, COUNT(*) AS cnt FROM league GROUP BY sport_id) AS sta JOIN sport ON sta.sport_id = sport.id;
+
+# season statistics
+SELECT sta.sport_id, sport.name, sta.cnt FROM (SELECT league.sport_id AS sport_id, COUNT(*) AS cnt FROM season LEFT JOIN league ON season.league_id=league.id GROUP BY league.sport_id) AS sta JOIN sport ON sta.sport_id = sport.id;
+
+# match statistics
+SELECT sta.sport_id, sport.name, sta.cnt FROM (SELECT league.sport_id AS sport_id, COUNT(*) AS cnt FROM `match` LEFT JOIN season ON season.link=match.season_link LEFT JOIN league ON season.league_id=league.id GROUP BY league.sport_id) AS sta JOIN sport ON sta.sport_id=sport.id;
+
+# statistic statistics
+SELECT "football", COUNT(*) AS `count` FROM football_statistics
+UNION
+SELECT "tennis", COUNT(*) AS `count` FROM tennis_statistics
+UNION
+SELECT "baseball", COUNT(*) AS `count` FROM baseball_statistics
+UNION
+SELECT "basketball", COUNT(*) AS `count` FROM basketball_statistics
+UNION
+SELECT "cricket", COUNT(*) AS `count` FROM cricket_statistics
+UNION
+SELECT "american-football", COUNT(*) AS `count` FROM `american-football_statistics`;
+
+# tennis matches
+SELECT * FROM `match` LEFT JOIN season ON season.link=match.season_link LEFT JOIN league ON season.league_id=league.id WHERE league.sport_id=2;
+
+### milestones.
+
+1. develop FrontEnd. $700
+	# you need to share me your design(images or sketch of your home page view port). of course you can share me some similar sites to imitate.
+
+	# I implement and develop frontend of the site.
+
+2. develop Backend. $1200
+	# you need to share me your working logic(in which way you want to handle your data, customer, money... etc)
+
+	# I implement and develop backend of the site.
+3. constructing & deploying. $300.
+	# you prepare online server to host our site.
+
+	# I set up our server on online hosting server.
+
+4. testing & bug-fix. $300
+	# you and i do full test on possible use cases on the server.
+	# I do bug-fix for every important errors.
+
+
+
+https://my.contabo.com/
+Username: ebuildix@gmail.com
+Pass: CeL2Q73cXwGj
+
+
+address server / type VNC / IP and port VNC password / user name / password / operating system
+62.171.176.77 / VPS XL SSD / 5.189.190.69:63116 / CeL2Q73cXwGj root/ mbquGB4x7gV6J3o/ Ubuntu 18.04 (64 bit)
+
+VNC IP:
+5.189.190.69:63116
+
+VNC Port:
+63116
+
+
+
+
+
+https://www.digitalocean.com/community/tutorials/how-to-allow-remote-access-to-mysql
+//// new server 
+digitalocean 
+
+139.59.110.193
+root
+
+rootGLORY95200?!a
+
+
+mysqldump -u username -p databasename > backup.sql
+mysqldump -u root -p mydatabase > /home/myuser/database-dump.sql
+
+
+sudo apt install mysql-server
+sudo systemctl status mysql
+sudo mysql
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'flashscore';
+FLUSH PRIVILEGES;
+
+GRANT ALL PRIVILEGES ON *.* TO 'administrator'@'localhost' IDENTIFIED BY 'very_strong_password';
+
+
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+
+innodb_log_file_size = 512M
+
+innodb_strict_mode = 0
+
+innodb_page_size=64k
+innodb_log_buffer_size=32M
+innodb_buffer_pool_size=512M
+
+mysql -u username -p database_name < file.sql
+
+From within mysql:
+
+mysql> use db_name;
+mysql> source backup-file.sql;
+
+service mysqld status
+service mysqld stop
+service mysqld start 
+
+sudo service mysql restart
+
+sudo apt-get install python3.7
+
+
+sudo apt install -y chromium-browser
+
+
+
+First, install Google Chrome for Debian/Ubuntu:
+
+sudo apt-get install libxss1 libappindicator1 libindicator7
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+sudo dpkg -i google-chrome*.deb
+sudo apt-get install -f
+Now, let’s install xvfb so we can run Chrome headlessly:
+
+sudo apt-get install xvfb
+Install ChromeDriver:1
+
+sudo apt-get install unzip
+
+wget -N http://chromedriver.storage.googleapis.com/2.26/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+chmod +x chromedriver
+
+sudo mv -f chromedriver /usr/local/share/chromedriver
+sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
+
+
+
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+sql_mode = ""
+
+sudo service mysql restart
+
+
+188.166.91.36
+
+IAMroot7899!?@ap
+
+
+
+sudo mysql -u flashscore -p
+
+
+CREATE USER 'flashscore'@'89.170.30.44' IDENTIFIED WITH mysql_native_password BY 'flashscore';
+
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'sammy'@'remote_server_ip' WITH GRANT OPTION;
+
+
+python3 run.py basketball.leagues
+
+
+
+
+
+
+season_links.txt
+league_links.txt
+
+python3 run.py football.season.league
+python3 run.py football.matches.season
+python3 run.py football.statistics.season
+python3 run.py football.statistics.season_update
+
+
+
+new server 161.35.163.162 // 2021-9-21

@@ -1,0 +1,58 @@
+FLASHSCORE scrapping tool V2.0
+
+##### How to install.
+    ### environment requirements
+        install python 3.7 or upper
+        pip install -r requirements.txt
+        Google Crome browser (tested on Version 86.0.4240.111 (Official Build) (64-bit), but nearly work on broad versions.)
+        ChromeDriver 86.0.4240.22
+    ### 
+        put your prepared excel sheet into "result" directory with the name of "your sport name".xlsx.
+        please exchange "your sport name" from above into proper sport name such as "football", "basketball", etc...
+    ### troublesome
+        due to twisted error it's good to install twisted with wheel file\
+        https://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted
+
+##### How to use.
+
+    ### goto base directory
+        cd into the project root directory.
+
+    ### Football
+        # scrap countries
+            python run.py football.countries
+        # scrap leagues
+            python run.py football.leagues
+        
+        # to start with your LEAGUES sheet
+            python run.py football.preprocess
+
+        # scrap seasons
+            python run.py football.seasons
+        # scrap matches
+            python run.py football.matches
+        # scrap match statistics
+            python run.py football.statistics
+
+##### Result
+    ### in "result" directory there will be 6 excel files with the result.
+        ## for football, the result file will be "football.xlsx"
+            there will be 5 sheets with the result.
+            # "LEAGUES" sheet
+                here you can put your start point leagues info as you suggested.
+            # "LEAGUES_PARSED" sheet
+                the result of "football.preprocess", columns: ['Country', 'League Name', 'League Link', 'Last Season Link']
+            # "SEASONS" sheet
+                the result of "football.seasons", columns: ['Country', 'League Name', 'Season Link']
+            # "MATCHES" sheet
+                the result of "football.matches", columns: ['Country', 'League Name', 'Match Link']
+            # "STATISTICS" sheet
+                the result of "football.statistics", columns: [all the needed statistics info]
+
+        basketball.xlsx
+        american_football.xlsx
+        tennis.xlsx
+        baseball.xlsx
+        hockey.xlsx
+
+    
